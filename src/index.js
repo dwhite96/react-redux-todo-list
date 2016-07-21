@@ -1,9 +1,12 @@
 import React from 'react/addons';
+// import { render } from 'react-dom'; // I added this line
 import thunk from 'redux-thunk';
 import { combineReducers, createStore, applyMiddleware, bindActionCreators } from 'redux';
 import { Provider, connect } from 'react-redux';
 import * as actionCreators from './actionCreators';
 import selector from './selector';
+// import todoApp from './reducers'; // I added this line
+// import App from './components/App'; // I added this line
 
 import jsonApiReducer from './json-api-reducer';
 
