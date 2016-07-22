@@ -22,14 +22,14 @@ var config = {
   output: {
     path: __dirname + '/lib',
     filename: outputFile,
-    publicPath: __dirname + '/example'
+    publicPath: __dirname
   },
   module: {
     loaders: [
       {
         test: /(\.jsx|\.js)$/,
-        loader: 'babel',
-        exclude: /(node_modules|bower_components)/
+        loader: 'babel-loader',
+        exclude: /(node_modules|bower_components)/,
       },
       {
         test: /(\.jsx|\.js)$/,
@@ -43,7 +43,7 @@ var config = {
 
 if (env === 'dev') {
   new WebpackDevServer(webpack(config), {
-    contentBase: './example',
+    // contentBase: './src',
     hot: true,
     debug: true
   }).listen(port, host, function (err, result) {
